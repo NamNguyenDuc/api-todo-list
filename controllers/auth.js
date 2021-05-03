@@ -99,12 +99,12 @@ exports.checkLogin = (req, res) => {
             User.findById(ketqua._id).exec((error, user) => {
                 if (error || !user) {
                     return res.status(200).json({
-                        status: false,
+                        success: false,
                         error: 'User not found'
                     })
                 }
                 return res.json({
-                    status: true,
+                    success: true,
                     user: user,
                 })
             })
